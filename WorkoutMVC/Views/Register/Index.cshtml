@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<style>
+
+    h1{
+        margin-top: 50px;
+        margin-bottom: 100px;
+        margin-left: 400px;
+    }
+
+    h3{
+        float: left;
+        margin-right: 30px;
+    }
+
+    input{
+
+        width: 400px;
+        height: 50px;
+    }
+
+    .box{
+        height: 100px;
+        width: 700px;
+        margin-left: 300px;
+    }
+
+    #password1 {
+        margin-left: 320px;
+    }
+
+    #password2 {
+        margin-left: 218px;
+    }
+
+    #create {
+        margin: 100px 50px 100px 450px;
+    }
+
+
+</style>
+
+
+
+<div class="jumbotron">
+
+    <h1>Register</h1>
+
+    <div class="box">
+        <h3>First Name:</h3>
+        <input type="text" name="firstName" />
+    </div>
+
+    <div class="box">
+        <h3>Last Name:</h3>
+        <input type="text" name="lastName" />
+    </div>
+
+    <div class="box">
+        <h3>User Name:</h3>
+        <input type="text" name="userName" />
+    </div>
+
+    <div id="password1" class="box">
+        <h3>Password:</h3>
+        <input type="password" name="password1" />
+    </div>
+
+    <div id="password2" class="box">
+        <h3>Re-Type Password:</h3>
+        <input type="password" name="password2" />
+    </div>
+
+    <div id="create">
+        <a href="/Workout/Workout">Create User</a>
+    </div>
+
+
+</div>
+

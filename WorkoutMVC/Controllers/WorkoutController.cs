@@ -6,12 +6,21 @@ using System.Web.Mvc;
 
 namespace WorkoutMVC.Controllers
 {
-    public class HomeController : Controller
+    public class WorkoutController : Controller
     {
+        // GET: Workout
         public ActionResult Index()
         {
             return View();
         }
 
+        // GET: Workout/workout
+        public ActionResult Workout()
+        {
+
+            return View();
+        }
     }
+
+
 }

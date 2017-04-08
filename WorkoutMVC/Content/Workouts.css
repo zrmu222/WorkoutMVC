@@ -1,0 +1,59 @@
+﻿
+    h1 {
+        margin: 30px 50px 40px 250px;
+    }
+
+    #WeekDay {
+        margin-left: 80px;
+    }
+
+    .weekDay{
+        margin: 20px 50px 20px 100px;
+    }
+
+    .label1 {
+        float: left;
+        margin-right: 200px;
+    }
+
+    .workoutBox {
+        height: 180px;
+        width: 800px;
+        margin: 20px 50px 30px 10px;
+        border: solid;
+        background-color: white;
+    }
+
+    .exNumber {
+        float: left;
+    }
+
+    .exName {
+        margin: 30px 50px 0px 270px;
+        text-align: center;
+        width: 228px;
+    }
+
+
+    .exInfo {
+        width: 794px;
+        height: 59px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .exInfoText {
+        margin-left: 50px;
+        margin-top: 0px;
+    }
+
+    .lastRepBox {
+        margin-left: 10px;
+        Height: 22px;
+        Width: 51px;
+    }
+
+
+    #completeDayBox {
+        margin: 60px 50px 30px 430px;
+    }
