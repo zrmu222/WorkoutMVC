@@ -35,13 +35,12 @@ namespace myworkout.model.business
 			{
 			}
 
-
 			return user;
 		}
 
 
 
-		public User saveUser(User u)
+		public User saveNewUser(User u)
 		{
 			User user = null;
 			try
@@ -54,6 +53,19 @@ namespace myworkout.model.business
 			}
 			return user;
 		}
+
+        public User updateUser(User u)
+        {
+            User user = null;
+            try
+            {
+                IDatabaseService dataBaseService = (IDatabaseService)GetService(typeof(IDatabaseService).Name);
+                user = dataBaseService.updateUser(u);
+            }
+            catch (UserFileException) { }
+
+            return user;
+        }
 
 	}
 }

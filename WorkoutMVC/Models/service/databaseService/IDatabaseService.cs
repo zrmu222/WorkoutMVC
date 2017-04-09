@@ -9,6 +9,8 @@ namespace myworkout.model.service.databaseService
 
         User saveNewUser(User user);
 
+        User updateUser(User user);
+
     }
 
 
