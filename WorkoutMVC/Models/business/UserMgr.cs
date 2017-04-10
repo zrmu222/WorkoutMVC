@@ -30,6 +30,7 @@ namespace myworkout.model.business
 			{
 				IDatabaseService dataBaseService = (IDatabaseService)GetService(typeof(IDatabaseService).Name);
 				user = dataBaseService.getUser(userName, password);
+
 			}
 			catch (UserFileException)
 			{

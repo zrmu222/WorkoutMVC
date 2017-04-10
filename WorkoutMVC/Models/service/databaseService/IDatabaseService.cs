@@ -11,6 +11,8 @@ namespace myworkout.model.service.databaseService
 
         User updateUser(User user);
 
+        bool checkUserName(string userName);
+
     }
 
 

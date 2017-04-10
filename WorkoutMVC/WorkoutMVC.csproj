@@ -205,6 +205,7 @@
     <Compile Include="Models\business\Manager.cs" />
     <Compile Include="Models\business\UserMgr.cs" />
     <Compile Include="Models\business\WorkoutMgr.cs" />
+    <Compile Include="Models\domain\Container.cs" />
     <Compile Include="Models\domain\Day.cs" />
     <Compile Include="Models\domain\Exercise.cs" />
     <Compile Include="Models\domain\User.cs" />

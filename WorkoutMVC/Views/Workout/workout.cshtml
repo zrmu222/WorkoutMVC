@@ -4,8 +4,117 @@
 }
 
 
+
+<style>
+ 
+    h1{
+        margin: 50px 50px 30px 390px;
+    }
+
+    .jumbotron {
+        padding-top: 4px;
+        padding-right: 0px;
+    }
+
+    #userName {
+        margin-left: -40px;
+    }
+
+    #weekNumber {
+        float: left;
+        margin-left: 250px;
+    }
+
+    #dayNumber {
+        float: left;
+        margin-left: 150px;
+    }
+
+    #workoutNumber{
+        margin-bottom: 170px;
+    }
+
+    .workoutBox {
+        float: none;
+        height: 200px;
+        width: 800px;
+        margin: 30px 50px 50px 110px;
+        border: solid;
+    }
+
+    .workoutName{
+        margin: 40px 50px 30px 310px;
+    }
+
+    .workoutInfo {
+        float: left;
+        margin-left: 70px;
+        margin-top: 20px;
+    }
+
+    .lastRepBox {
+        float: left;
+        width: 70px;
+        hight: 20px;
+        margin-left: 20px;
+    }
+
+    #completeDayBox {
+        margin: 100px 50px 70px 430px;
+    }
+
+</style>
+
 <div class="jumbotron">
-    <h2>Workout</h2>
+    <h4 id="userName">FirstName LastName</h4>
+    <h1>Workout</h1>
+    <div id="workoutNumber">
+        <h3 id="weekNumber">Week Number: 1</h3>
+        <h3 id="dayNumber">Day Number: 1</h3>
+     </div>
+
+    <div class="workoutBox">
+        <h3 class="workoutName">Workout Name</h3>
+        <h4 class="workoutInfo">Weight: 100lb</h4>
+        <h4 class="workoutInfo">Sets: 3</h4>
+        <h4 class="workoutInfo">Reps: 5</h4>
+        <h4 class="workoutInfo">Last Set Reps:</h4>
+        <input class ="lastRepBox" type="number"/>
+    </div>
+
+    <div class="workoutBox">
+        <h3 class="workoutName">Workout Name</h3>
+        <h4 class="workoutInfo">Weight: 100lb</h4>
+        <h4 class="workoutInfo">Sets: 3</h4>
+        <h4 class="workoutInfo">Reps: 5</h4>
+        <h4 class="workoutInfo">Last Set Reps:</h4>
+        <input class="lastRepBox" type="number" />
+    </div>
+
+    <div class="workoutBox">
+        <h3 class="workoutName">Workout Name</h3>
+        <h4 class="workoutInfo">Weight: 100lb</h4>
+        <h4 class="workoutInfo">Sets: 3</h4>
+        <h4 class="workoutInfo">Reps: 5</h4>
+        <h4 class="workoutInfo">Last Set Reps:</h4>
+        <input class="lastRepBox" type="number" />
+    </div>
+    
+
+    <div id="completeDayBox">
+
+        <button>Complete Day</button>
+
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 

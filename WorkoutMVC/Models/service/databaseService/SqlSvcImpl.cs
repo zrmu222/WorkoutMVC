@@ -13,6 +13,8 @@ namespace myworkout.model.service.databaseService
     {
 
         //string connectionString = @"server=(local);Integrated Security=SSPI;database=MyWorkout";
+        string message = null;
+        bool status = false;
 
         public SqlSvcImpl()
         {        
@@ -23,7 +25,6 @@ namespace myworkout.model.service.databaseService
        private SqlConnection getConnection()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
-            Console.WriteLine("connectionString: " + connectionString);
             SqlConnection conn = new SqlConnection(connectionString);
             return conn;
         }
@@ -40,6 +41,7 @@ namespace myworkout.model.service.databaseService
                 string select = "Select * from Users";
                 SqlCommand cmd = new SqlCommand(select, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
+                status = false;
 
                 while (reader.Read())
                 {
@@ -54,79 +56,87 @@ namespace myworkout.model.service.databaseService
                             user.Password = reader.GetString(reader.GetOrdinal("Password"));
                             user.CurrentDay = reader.GetInt32(reader.GetOrdinal("CurrentDay"));
                             user.CurrentWeek = reader.GetInt32(reader.GetOrdinal("CurrentWeek"));
+                            status = true;
                         }
                     }
                 }
                 reader.Close();
 
-                select = "Select * from Weeks Where userId =" + user.UserId + "";
-                cmd = new SqlCommand(select, conn);
-                reader = cmd.ExecuteReader();
-                List<Week> weekList = new List<Week>();
-                while (reader.Read())
+                if (status)
                 {
-                    Week wk = new Week();
-                    wk.WeekId = reader.GetInt32(reader.GetOrdinal("WeekId"));
-                    wk.WeekNumber = reader.GetInt32(reader.GetOrdinal("WeekNumber"));
-                    wk.WeekOrderNumber = reader.GetInt32(reader.GetOrdinal("WeekOrderNumber"));
-                    weekList.Add(wk);
-                }
-                reader.Close();
-
-                foreach(Week wk in weekList){
-                    select = "Select * from Days Where (UserId =" + user.UserId + " And WeekId =" + wk.WeekId + ")";
+                    select = "Select * from Weeks Where userId =" + user.UserId + "";
                     cmd = new SqlCommand(select, conn);
                     reader = cmd.ExecuteReader();
-                    List<Day> dayList = new List<Day>();
+                    List<Week> weekList = new List<Week>();
                     while (reader.Read())
                     {
-                        Day day = new domain.Day();
-                        day.DayId = reader.GetInt32(reader.GetOrdinal("DayId"));
-                        day.DayNumber = reader.GetInt32(reader.GetOrdinal("DayNumber"));
-                        day.DayOrderNumber = reader.GetInt32(reader.GetOrdinal("DayOrderNumber"));
-                        dayList.Add(day);
+                        Week wk = new Week();
+                        wk.WeekId = reader.GetInt32(reader.GetOrdinal("WeekId"));
+                        wk.WeekNumber = reader.GetInt32(reader.GetOrdinal("WeekNumber"));
+                        wk.WeekOrderNumber = reader.GetInt32(reader.GetOrdinal("WeekOrderNumber"));
+                        weekList.Add(wk);
                     }
-                    wk.Days = dayList;
                     reader.Close();
-                }
 
-                foreach(Week wk in weekList)
-                {
-                    foreach(Day day in wk.Days)
+                    foreach (Week wk in weekList)
                     {
-                        IList<int> dayExerciseNumber = new List<int>();
-                        select = "Select * From DayExerciseList Where DayId =" + day.DayId;
+                        select = "Select * from Days Where (UserId =" + user.UserId + " And WeekId =" + wk.WeekId + ")";
                         cmd = new SqlCommand(select, conn);
                         reader = cmd.ExecuteReader();
+                        List<Day> dayList = new List<Day>();
                         while (reader.Read())
                         {
-                            dayExerciseNumber.Add(reader.GetInt32(reader.GetOrdinal("Number")));
+                            Day day = new domain.Day();
+                            day.DayId = reader.GetInt32(reader.GetOrdinal("DayId"));
+                            day.DayNumber = reader.GetInt32(reader.GetOrdinal("DayNumber"));
+                            day.DayOrderNumber = reader.GetInt32(reader.GetOrdinal("DayOrderNumber"));
+                            dayList.Add(day);
                         }
-                        day.ExerciseListNumber = dayExerciseNumber;
+                        wk.Days = dayList;
                         reader.Close();
                     }
-                }
 
-                user.Weeks = weekList;
+                    foreach (Week wk in weekList)
+                    {
+                        foreach (Day day in wk.Days)
+                        {
+                            IList<int> dayExerciseNumber = new List<int>();
+                            select = "Select * From DayExerciseList Where DayId =" + day.DayId;
+                            cmd = new SqlCommand(select, conn);
+                            reader = cmd.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                dayExerciseNumber.Add(reader.GetInt32(reader.GetOrdinal("Number")));
+                            }
+                            day.ExerciseListNumber = dayExerciseNumber;
+                            reader.Close();
+                        }
+                    }
 
-                select = "Select * From Exercises Where UserId =" + user.UserId;
-                List<Exercise> exerciseList = new List<Exercise>();
-                cmd = new SqlCommand(select, conn);
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
+                    user.Weeks = weekList;
+
+                    select = "Select * From Exercises Where UserId =" + user.UserId;
+                    List<Exercise> exerciseList = new List<Exercise>();
+                    cmd = new SqlCommand(select, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Exercise ex = new Exercise();
+                        ex.ExerciseId = reader.GetInt32(reader.GetOrdinal("ExerciseId"));
+                        ex.Name = reader.GetString(reader.GetOrdinal("Name"));
+                        ex.ExerciseNumber = reader.GetInt32(reader.GetOrdinal("ExerciseNumber"));
+                        ex.Weight = (double)reader.GetDecimal(reader.GetOrdinal("Weight"));
+                        ex.Sets = reader.GetInt32(reader.GetOrdinal("Sets"));
+                        ex.Reps = reader.GetInt32(reader.GetOrdinal("Reps"));
+                        exerciseList.Add(ex);
+                    }
+                    reader.Close();
+                    user.ExerciseList = exerciseList;
+
+                }else
                 {
-                    Exercise ex = new Exercise();
-                    ex.ExerciseId = reader.GetInt32(reader.GetOrdinal("ExerciseId"));
-                    ex.Name = reader.GetString(reader.GetOrdinal("Name"));
-                    ex.ExerciseNumber = reader.GetInt32(reader.GetOrdinal("ExerciseNumber"));
-                    ex.Weight = (double)reader.GetDecimal(reader.GetOrdinal("Weight"));
-                    ex.Sets = reader.GetInt32(reader.GetOrdinal("Sets"));
-                    ex.Reps = reader.GetInt32(reader.GetOrdinal("Reps"));
-                    exerciseList.Add(ex);
+                    message = "Wrong user name or password";
                 }
-                reader.Close();
-                user.ExerciseList = exerciseList;
-
 
             }catch (Exception ex)
             {
@@ -136,6 +146,11 @@ namespace myworkout.model.service.databaseService
             {
                 conn.Close();
             }
+
+            Container c = new Container();
+            c.User = user;
+            c.status = status;
+            c.Message = message;
 
             return user;
         }
@@ -260,6 +275,19 @@ namespace myworkout.model.service.databaseService
         }
 
 
+        public bool checkUserName(string userName)
+        {
+            bool isFound = false;
+
+            SqlConnection conn = getConnection();
+            conn.Open();
+            string select = "SELECT * FROM Users WHERE UserName=" + userName;
+            SqlCommand command = new SqlCommand(select, conn);
+            SqlDataReader reader = command.ExecuteReader();
+            isFound = reader.Read();
+
+            return isFound;
+        }
 
 
 
