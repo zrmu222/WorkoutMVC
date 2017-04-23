@@ -23,7 +23,7 @@ namespace WorkoutMVC.Tests.Model.Server
         [TestMethod]
         public void CreateUser()
         {
-            string userName = "zrm";
+            string userName = "zrm222";
             string firstName = "Zack";
             string lastName = "Murphy";
             string password = "1234";
