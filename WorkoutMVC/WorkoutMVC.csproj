@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LibMyWorkout">
+      <HintPath>..\..\MyWorkoutServer\LibMyWorkout\obj\Debug\LibMyWorkout.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -202,37 +205,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\business\Manager.cs" />
-    <Compile Include="Models\business\UserMgr.cs" />
-    <Compile Include="Models\business\WorkoutMgr.cs" />
-    <Compile Include="Models\domain\Container.cs" />
-    <Compile Include="Models\domain\Day.cs" />
-    <Compile Include="Models\domain\Exercise.cs" />
-    <Compile Include="Models\domain\User.cs" />
-    <Compile Include="Models\domain\Week.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\service\completedayservice\CompleteDaySvcImpl.cs" />
-    <Compile Include="Models\service\completedayservice\ICompleteDayService.cs" />
-    <Compile Include="Models\service\databaseService\IDatabaseService.cs" />
-    <Compile Include="Models\service\databaseService\SerializationSvcImpl.cs" />
-    <Compile Include="Models\service\databaseService\SqlSvcImpl.cs" />
-    <Compile Include="Models\service\exceptions\UserFileException.cs" />
-    <Compile Include="Models\service\exceptions\UserInvalidException.cs" />
-    <Compile Include="Models\service\Factory.cs" />
-    <Compile Include="Models\service\getexercisesservice\GetExercisesSvcImpl.cs" />
-    <Compile Include="Models\service\getexercisesservice\IGetExercisesService.cs" />
-    <Compile Include="Models\service\IService.cs" />
-    <Compile Include="Models\service\newUserSetupService\INewUserSetUpService.cs" />
-    <Compile Include="Models\service\newUserSetupService\NewUserSvcImpl.cs" />
+    <Compile Include="Models\Server\ServiceManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Workouts.css" />
@@ -277,7 +256,9 @@
     <Content Include="Views\Workout.cshtml" />
     <Content Include="Views\Workout\Workout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
