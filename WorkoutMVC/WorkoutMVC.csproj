@@ -44,8 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LibMyWorkout">
-      <HintPath>..\..\MyWorkoutServer\LibMyWorkout\obj\Debug\LibMyWorkout.dll</HintPath>
+    <Reference Include="LibMyWorkout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Visual Studio 2015\Projects\MyWorkoutWCF\LibMyWorkout\bin\Debug\LibMyWorkout.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
@@ -80,9 +81,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MyWorkoutHost">
-      <HintPath>..\..\..\Visual Studio 2015\Projects\MyWorkoutWCF\MyWorkoutHost\obj\Debug\MyWorkoutHost.exe</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />

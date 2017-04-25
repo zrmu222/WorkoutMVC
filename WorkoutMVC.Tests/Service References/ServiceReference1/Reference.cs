@@ -44,6 +44,12 @@ namespace WorkoutMVC.Tests.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/saveNewUser", ReplyAction="http://tempuri.org/IService1/saveNewUserResponse")]
         System.Threading.Tasks.Task<LibMyWorkout.Domain.User> saveNewUserAsync(LibMyWorkout.Domain.User u);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Hello", ReplyAction="http://tempuri.org/IService1/HelloResponse")]
+        string Hello(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Hello", ReplyAction="http://tempuri.org/IService1/HelloResponse")]
+        System.Threading.Tasks.Task<string> HelloAsync(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +117,14 @@ namespace WorkoutMVC.Tests.ServiceReference1 {
         
         public System.Threading.Tasks.Task<LibMyWorkout.Domain.User> saveNewUserAsync(LibMyWorkout.Domain.User u) {
             return base.Channel.saveNewUserAsync(u);
+        }
+        
+        public string Hello(string name) {
+            return base.Channel.Hello(name);
+        }
+        
+        public System.Threading.Tasks.Task<string> HelloAsync(string name) {
+            return base.Channel.HelloAsync(name);
         }
     }
 }

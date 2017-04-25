@@ -39,6 +39,12 @@
   <wsdl:message name="IService1_saveNewUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:saveNewUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Hello_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hello" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Hello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HelloResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -59,6 +65,10 @@
     <wsdl:operation name="saveNewUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/saveNewUser" message="tns:IService1_saveNewUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/saveNewUserResponse" message="tns:IService1_saveNewUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Hello" message="tns:IService1_Hello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/HelloResponse" message="tns:IService1_Hello_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -101,6 +111,15 @@
     </wsdl:operation>
     <wsdl:operation name="saveNewUser">
       <soap:operation soapAction="http://tempuri.org/IService1/saveNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <soap:operation soapAction="http://tempuri.org/IService1/Hello" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -3,16 +3,16 @@
   <xs:import schemaLocation="http://localhost:8090/MyWorkoutWCF/Service1/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="User">
     <xs:sequence>
-      <xs:element name="_x003C_CurrentDay_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_CurrentWeek_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_ExerciseList_x003E_k__BackingField" nillable="true" type="tns:ArrayOfExercise" />
-      <xs:element name="_x003C_FirstName_x003E_k__BackingField" nillable="true" type="xs:string" />
-      <xs:element name="_x003C_LastName_x003E_k__BackingField" nillable="true" type="xs:string" />
-      <xs:element name="_x003C_Password_x003E_k__BackingField" nillable="true" type="xs:string" />
-      <xs:element name="_x003C_Role_x003E_k__BackingField" nillable="true" type="xs:string" />
-      <xs:element name="_x003C_UserId_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_UserName_x003E_k__BackingField" nillable="true" type="xs:string" />
-      <xs:element name="_x003C_Weeks_x003E_k__BackingField" nillable="true" type="tns:ArrayOfWeek" />
+      <xs:element minOccurs="0" name="CurrentDay" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentWeek" type="xs:int" />
+      <xs:element minOccurs="0" name="ExerciseList" nillable="true" type="tns:ArrayOfExercise" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weeks" nillable="true" type="tns:ArrayOfWeek" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="User" nillable="true" type="tns:User" />
@@ -24,13 +24,13 @@
   <xs:element name="ArrayOfExercise" nillable="true" type="tns:ArrayOfExercise" />
   <xs:complexType name="Exercise">
     <xs:sequence>
-      <xs:element name="_x003C_ExerciseId_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_ExerciseNumber_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_LastSetReps_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Name_x003E_k__BackingField" nillable="true" type="xs:string" />
-      <xs:element name="_x003C_Reps_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Sets_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Weight_x003E_k__BackingField" type="xs:double" />
+      <xs:element minOccurs="0" name="ExerciseId" type="xs:int" />
+      <xs:element minOccurs="0" name="ExerciseNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="LastSetReps" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reps" type="xs:int" />
+      <xs:element minOccurs="0" name="Sets" type="xs:int" />
+      <xs:element minOccurs="0" name="Weight" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Exercise" nillable="true" type="tns:Exercise" />
@@ -42,10 +42,10 @@
   <xs:element name="ArrayOfWeek" nillable="true" type="tns:ArrayOfWeek" />
   <xs:complexType name="Week">
     <xs:sequence>
-      <xs:element name="_x003C_Days_x003E_k__BackingField" nillable="true" type="tns:ArrayOfDay" />
-      <xs:element name="_x003C_WeekId_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_WeekNumber_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_WeekOrderNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element minOccurs="0" name="Days" nillable="true" type="tns:ArrayOfDay" />
+      <xs:element minOccurs="0" name="WeekId" type="xs:int" />
+      <xs:element minOccurs="0" name="WeekNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="WeekOrderNumber" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Week" nillable="true" type="tns:Week" />
@@ -57,10 +57,10 @@
   <xs:element name="ArrayOfDay" nillable="true" type="tns:ArrayOfDay" />
   <xs:complexType name="Day">
     <xs:sequence>
-      <xs:element name="_x003C_DayId_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_DayNumber_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_DayOrderNumber_x003E_k__BackingField" type="xs:int" />
-      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_ExerciseListNumber_x003E_k__BackingField" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="DayId" type="xs:int" />
+      <xs:element minOccurs="0" name="DayNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="DayOrderNumber" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExerciseListNumber" nillable="true" type="q1:ArrayOfint" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Day" nillable="true" type="tns:Day" />
