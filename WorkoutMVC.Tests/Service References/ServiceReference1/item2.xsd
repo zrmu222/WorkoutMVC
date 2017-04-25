@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LibMyWorkout.Domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LibMyWorkout.Domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8090/MyWorkoutWCF/Service1/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element name="_x003C_CurrentDay_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_CurrentWeek_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_ExerciseList_x003E_k__BackingField" nillable="true" type="tns:ArrayOfExercise" />
+      <xs:element name="_x003C_FirstName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_LastName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Password_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Role_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_UserId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_UserName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Weeks_x003E_k__BackingField" nillable="true" type="tns:ArrayOfWeek" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfExercise">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Exercise" nillable="true" type="tns:Exercise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExercise" nillable="true" type="tns:ArrayOfExercise" />
+  <xs:complexType name="Exercise">
+    <xs:sequence>
+      <xs:element name="_x003C_ExerciseId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_ExerciseNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_LastSetReps_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Name_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Reps_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Sets_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Weight_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exercise" nillable="true" type="tns:Exercise" />
+  <xs:complexType name="ArrayOfWeek">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Week" nillable="true" type="tns:Week" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWeek" nillable="true" type="tns:ArrayOfWeek" />
+  <xs:complexType name="Week">
+    <xs:sequence>
+      <xs:element name="_x003C_Days_x003E_k__BackingField" nillable="true" type="tns:ArrayOfDay" />
+      <xs:element name="_x003C_WeekId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_WeekNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_WeekOrderNumber_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Week" nillable="true" type="tns:Week" />
+  <xs:complexType name="ArrayOfDay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Day" nillable="true" type="tns:Day" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDay" nillable="true" type="tns:ArrayOfDay" />
+  <xs:complexType name="Day">
+    <xs:sequence>
+      <xs:element name="_x003C_DayId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_DayNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_DayOrderNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_ExerciseListNumber_x003E_k__BackingField" nillable="true" type="q1:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Day" nillable="true" type="tns:Day" />
+</xs:schema>

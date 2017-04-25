@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c815d3b8-36a9-441b-8282-38b6ba230af0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8090/MyWorkoutWCF/Service1/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="4dcbbb99-5e01-4dbb-8abf-1e4a392e3c25" SourceId="1" SourceUrl="http://localhost:8090/MyWorkoutWCF/Service1/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="8ff5bab8-4b7d-4545-9381-588e21a967dc" SourceId="1" SourceUrl="http://localhost:8090/MyWorkoutWCF/Service1/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="c6bfe13b-88e9-4971-8dff-05e2d07a9499" SourceId="1" SourceUrl="http://localhost:8090/MyWorkoutWCF/Service1/?xsd=xsd0" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="7d1659f3-b9b3-4581-8d7a-71e220ca2747" SourceId="1" SourceUrl="http://localhost:8090/MyWorkoutWCF/Service1/?xsd=xsd3" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="4404061e-8e63-4348-8f62-60606a0a34b2" SourceId="1" SourceUrl="http://localhost:8090/MyWorkoutWCF/Service1/?xsd=xsd2" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="8b823b80-e357-4354-9e64-09801f67ca39" SourceId="1" SourceUrl="http://localhost:8090/MyWorkoutWCF/Service1/?xsd=xsd4" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="fa008039-4bd0-41d6-be8a-578ab41b90b8" SourceId="1" SourceUrl="http://localhost:8090/MyWorkoutWCF/Service1/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
