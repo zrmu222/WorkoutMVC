@@ -57,10 +57,10 @@
   <xs:element name="ArrayOfDay" nillable="true" type="tns:ArrayOfDay" />
   <xs:complexType name="Day">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DayId" type="xs:int" />
-      <xs:element minOccurs="0" name="DayNumber" type="xs:int" />
-      <xs:element minOccurs="0" name="DayOrderNumber" type="xs:int" />
-      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExerciseListNumber" nillable="true" type="q1:ArrayOfint" />
+      <xs:element name="_x003C_DayId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_DayNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_DayOrderNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_ExerciseListNumber_x003E_k__BackingField" nillable="true" type="q1:ArrayOfint" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Day" nillable="true" type="tns:Day" />

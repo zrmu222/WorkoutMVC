@@ -50,6 +50,12 @@ namespace WorkoutMVC.Tests.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Hello", ReplyAction="http://tempuri.org/IService1/HelloResponse")]
         System.Threading.Tasks.Task<string> HelloAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/isUserNameTaken", ReplyAction="http://tempuri.org/IService1/isUserNameTakenResponse")]
+        bool isUserNameTaken(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/isUserNameTaken", ReplyAction="http://tempuri.org/IService1/isUserNameTakenResponse")]
+        System.Threading.Tasks.Task<bool> isUserNameTakenAsync(string userName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -125,6 +131,14 @@ namespace WorkoutMVC.Tests.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> HelloAsync(string name) {
             return base.Channel.HelloAsync(name);
+        }
+        
+        public bool isUserNameTaken(string userName) {
+            return base.Channel.isUserNameTaken(userName);
+        }
+        
+        public System.Threading.Tasks.Task<bool> isUserNameTakenAsync(string userName) {
+            return base.Channel.isUserNameTakenAsync(userName);
         }
     }
 }

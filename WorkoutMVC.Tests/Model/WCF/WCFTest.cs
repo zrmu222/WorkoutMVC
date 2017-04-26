@@ -17,15 +17,6 @@ namespace WorkoutMVC.Tests.Model.WCF
         }
 
 
-        [TestMethod]
-        public void wcfGetUser()
-        {
-
-            Console.WriteLine("Starting getUserTest");
-            User user = proxy.createUser();
-            Console.WriteLine("User: " + user.ToString());
-            Assert.IsTrue(user.validate());
-        }
 
         [TestMethod]
         public void name()
@@ -38,15 +29,26 @@ namespace WorkoutMVC.Tests.Model.WCF
         public void saveNewUserTest()
         {
             User user = proxy.createUser();
-            user.UserName = "Admin";
+            User u = null;
+            string userName = "Zack";
+            user.UserName = userName;
             user.FirstName = "Admin";
             user.LastName = "Admin";
             user.Password = "Password";
-
-            User u = proxy.saveNewUser(user);
-            if(u != null){
-                Console.WriteLine(u.ToString());
+            bool isTaken = proxy.userNameTaken(userName);
+            if (!isTaken)
+            {
+                u = proxy.saveNewUser(user);
+                if (u != null)
+                {
+                    Console.WriteLine(u.ToString());
+                }
             }
+            else
+            {
+                Console.WriteLine("Username taken");
+            }
+            Assert.IsTrue(u.validate());
         }
 
         [TestMethod]
@@ -69,6 +71,16 @@ namespace WorkoutMVC.Tests.Model.WCF
             }
 
             Assert.IsTrue(user.validate());
+        }
+
+        [TestMethod]
+        public void checkUserNameTest()
+        {
+            string userName = "Admin";
+            bool isTaken = proxy.userNameTaken(userName);
+            Console.WriteLine("isTaken: " + isTaken);
+            Assert.IsTrue(isTaken);
+            
         }
 
     }

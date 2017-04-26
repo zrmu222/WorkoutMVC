@@ -44,8 +44,12 @@ namespace WorkoutMVC.Models.WCF
             return user;
         }
 
-
-
+        public bool userNameTaken(string userName)
+        {
+            bool isTaken = true;
+            isTaken = proxy.isUserNameTaken(userName);
+            return isTaken;
+        }
 
 
     }

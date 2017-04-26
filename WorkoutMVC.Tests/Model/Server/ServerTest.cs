@@ -6,7 +6,6 @@ using LibMyWorkout.Domain;
 
 namespace WorkoutMVC.Tests.Model.Server
 {
-    [TestClass]
     public class ServerTest
     {
         ServiceManager serverManager;
