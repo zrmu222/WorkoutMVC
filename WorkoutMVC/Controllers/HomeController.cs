@@ -13,5 +13,11 @@ namespace WorkoutMVC.Controllers
             return View();
         }
 
+
+        public string Name()
+        {
+            return "Zack";
+        }
+
     }
 }
