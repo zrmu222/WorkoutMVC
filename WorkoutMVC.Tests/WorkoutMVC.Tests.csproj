@@ -93,6 +93,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Business\UserManagerTest.cs" />
     <Compile Include="Model\Server\ServerTest.cs" />
     <Compile Include="Model\Services\CreateUserTest.cs" />
     <Compile Include="Model\Services\HttpClientTest.cs" />

@@ -12,45 +12,44 @@ namespace WorkoutMVC.Models.Service.CreateUser
 {
     public class CreateUserImpl : ICreateUser 
     {
-        public async Task<string> createUserAsync(User user)
+        public bool createUserAsync(User user)
         {
-            string location = await httpCall(user);
+            bool passed = false;
+            Task<HttpResponseMessage> responce = httpCall(user);
+            bool status = responce.Result.IsSuccessStatusCode;
+            if (status)
+            {
+                passed = true;
+                Console.WriteLine("User Created");
+            }
+            else
+            {
+                Console.WriteLine("Error creating user : " + responce.Result.StatusCode);
+            }
 
 
-            return location;
+            return passed;
         }
 
 
 
-        private async Task<string> httpCall(User user)
+        private async Task<HttpResponseMessage> httpCall(User user)
         {
             string location = null;
+            HttpResponseMessage responce = null;
             try
             {
                 HttpClientClass httpClientClass = new HttpClientClass();
-                HttpClient client = httpClientClass.getClient();              
-                using (HttpResponseMessage responce = await client.PostAsJsonAsync("api/User", user))
-                {
-                    int code = (int)responce.StatusCode;
-                    Console.WriteLine("Code: " + code);
-                    if (code.Equals(201))
-                    {
-                        location = responce.Headers.Location.ToString();
-                        Console.WriteLine("Location: " + location);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Username is taken");
-                    }
+                HttpClient client = httpClientClass.getClient();
+                responce = await client.PostAsJsonAsync("api/User", user);
 
-                }
             }catch(Exception e)
             {
                 Console.WriteLine(e.Message);
             }
 
 
-            return location;
+            return responce;
         }
 
     }

@@ -17,19 +17,20 @@ namespace WorkoutMVC.Tests.Model.Services
 
 
         [TestMethod]
-        public void TestMethod1()
+        public void HttpGetUser()
         {
             getUser = new GetUserImpl();
+            User user = getUser.getUser("Admin", "Password");
+            if (user.validate())
+            {
+                Console.WriteLine("User: " + user.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Wrong username or password");
+            }
+            
 
-            Task<HttpResponseMessage> responce = getUser.getUser("Admin", "Password");
-            HttpContent content = responce.Result.Content;
-            string x = content.ReadAsStringAsync().Result;
-            bool status = responce.Result.IsSuccessStatusCode;
-            Console.WriteLine("Status Code: " + status);
-            User user = JsonConvert.DeserializeObject<User>(x);
-            Console.WriteLine("User: " + user.ToString());
-            //Console.WriteLine("User: " + x);
-            Console.WriteLine("Headers: " + content.Headers.ToString());
 
         }
     }

@@ -9,7 +9,7 @@ namespace WorkoutMVC.Tests.Model.Services
     public class HttpClientTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void getClientTest()
         {
             HttpClientClass clientClass = new HttpClientClass();
             HttpClient client = clientClass.getClient();

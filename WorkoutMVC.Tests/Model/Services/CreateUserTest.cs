@@ -25,11 +25,11 @@ namespace WorkoutMVC.Tests.Model.Services
             User user = new User();
             user.FirstName = "John";
             user.LastName = "Smith";
-            user.UserName = "JSmith6";
+            user.UserName = "JSmith1";
             user.Password = "1234";
-            Task<string> location = createUser.createUserAsync(user);
-            Console.WriteLine("Location: " + location.Result);
-            Assert.IsTrue(location != null);
+            bool status = createUser.createUserAsync(user);
+            Console.WriteLine("Status: " + status);
+            Assert.IsTrue(status);
             Console.WriteLine("CreateUser Success Passed");
         }
     }
