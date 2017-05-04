@@ -38,7 +38,7 @@
   <ItemGroup>
     <Reference Include="LibMyWorkout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Visual Studio 2015\Projects\MyWorkoutWCF\LibMyWorkout\bin\Debug\LibMyWorkout.dll</HintPath>
+      <HintPath>..\..\..\Visual Studio 2017\Projects\MyWorkoutRESTServer\LibMyWorkout\bin\Debug\LibMyWorkout.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -94,6 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Server\ServerTest.cs" />
+    <Compile Include="Model\Services\CreateUserTest.cs" />
+    <Compile Include="Model\Services\HttpClientTest.cs" />
+    <Compile Include="Model\Services\GetUserTest.cs" />
     <Compile Include="Model\WCF\WCFTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />

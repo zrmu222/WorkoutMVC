@@ -10,7 +10,7 @@ namespace WorkoutMVC.Models.Service.CreateUser
 {
     public interface ICreateUser : IService
     {
-        HttpResponseMessage getUser(string userName, string password);
+        Task<string> createUserAsync(User user);
 
 
     }

@@ -221,11 +221,12 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Service\CreateUser\GetUserImpl.cs" />
+    <Compile Include="Models\Service\CreateUser\CreateUserImpl.cs" />
     <Compile Include="Models\Service\CreateUser\ICreateUser.cs" />
     <Compile Include="Models\Service\Factory.cs" />
     <Compile Include="Models\Server\ServiceManager.cs" />
-    <Compile Include="Models\Service\HttpClient.cs" />
+    <Compile Include="Models\Service\GetUser\GetUserImpl.cs" />
+    <Compile Include="Models\Service\HttpClientClass.cs" />
     <Compile Include="Models\Service\IService.cs" />
     <Compile Include="Models\WCF\WCFClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -314,7 +315,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\Business\" />
-    <Folder Include="Models\Service\GetUser\" />
     <Folder Include="Models\Service\UpdateUser\" />
   </ItemGroup>
   <ItemGroup>
