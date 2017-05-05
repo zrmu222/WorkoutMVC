@@ -50,7 +50,7 @@ namespace WorkoutMVC.Models.Service.GetUser
                 HttpClient client = httpClient.getClient();
                 string uri = client.BaseAddress.ToString() + "api/User/" + userName + "/" + password + "/";
                 Console.WriteLine("Uri: " + uri);
-                responce = await client.GetAsync(uri);
+                responce = await client.GetAsync(uri).ConfigureAwait(false);
 
 
             }catch (Exception e)

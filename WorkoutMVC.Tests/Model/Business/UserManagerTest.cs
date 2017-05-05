@@ -23,12 +23,12 @@ namespace WorkoutMVC.Tests.Model.Business
         }
 
         [TestMethod]
-        public void businessCreaateUser()
+        public void businessCreateUser()
         {
             User user = new User();
             user.FirstName = "John";
             user.LastName = "Smith";
-            user.UserName = "JSmith11";
+            user.UserName = "JSmith21";
             user.Password = "1234";
             UserManager manager = new UserManager();
             User u = manager.createUser(user);

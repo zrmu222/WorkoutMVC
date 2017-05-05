@@ -25,7 +25,7 @@ namespace WorkoutMVC.Tests.Model.Services
             User user = new User();
             user.FirstName = "John";
             user.LastName = "Smith";
-            user.UserName = "JSmith1";
+            user.UserName = "JSmith20";
             user.Password = "1234";
             bool status = createUser.createUserAsync(user);
             Console.WriteLine("Status: " + status);

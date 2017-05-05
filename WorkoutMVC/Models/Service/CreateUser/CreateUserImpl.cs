@@ -41,7 +41,7 @@ namespace WorkoutMVC.Models.Service.CreateUser
             {
                 HttpClientClass httpClientClass = new HttpClientClass();
                 HttpClient client = httpClientClass.getClient();
-                responce = await client.PostAsJsonAsync("api/User", user);
+                responce = await client.PostAsJsonAsync("api/User", user).ConfigureAwait(false);
 
             }catch(Exception e)
             {

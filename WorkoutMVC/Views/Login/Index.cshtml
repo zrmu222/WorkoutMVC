@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Login";
 }
 
 
@@ -31,17 +31,13 @@
 <div class="jumbotron">
     <h1>Login</h1>
 
-
-    <h3 class="login">Username: </h3>
-    <input id="userName" class="inputBox">
-
-    <h3 class="login">Password: </h3>
-    <input type="password" id="password" class="inputBox">
-
-    <button id="loginButton">Login</button>
-
-
-
+    <form action="Login/getUser" method="post">
+        <label class="login">UserName:</label>
+        <input class="inputBox" type="text" name="userName" placeholder="UserName" required />
+        <label class="login">Password:</label>
+        <input class="inputBox" type="password" name="password" placeholder="Password" required />
+        <input id="loginButton" type="submit" value="Sign In"/>
+    </form>
 
 
 </div>

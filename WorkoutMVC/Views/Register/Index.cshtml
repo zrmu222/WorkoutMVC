@@ -48,35 +48,34 @@
 <div class="jumbotron">
 
     <h1>Register</h1>
-
+    <form action="Register/createUser" method="post">
     <div class="box">
         <h3>First Name:</h3>
-        <input type="text" name="firstName" />
+        <input type="text" name="firstName" placeholder="First Name" required />
     </div>
 
     <div class="box">
         <h3>Last Name:</h3>
-        <input type="text" name="lastName" />
+        <input type="text" name="lastName" placeholder="Last Name" required />
     </div>
 
     <div class="box">
         <h3>User Name:</h3>
-        <input type="text" name="userName" />
+        <input type="text" name="userName" placeholder="UserName" required />
     </div>
 
     <div id="password1" class="box">
         <h3>Password:</h3>
-        <input type="password" name="password1" />
+        <input type="password" name="password" placeholder="Password" required />
     </div>
 
-    <div id="password2" class="box">
-        <h3>Re-Type Password:</h3>
-        <input type="password" name="password2" />
-    </div>
 
     <div id="create">
-        <a href="/Workout/Workout">Create User</a>
+        <input type="submit" value="Create User"/>
     </div>
+    </form>
+
+    <h3>@TempData["Error"]</h3>
 
 
 </div>
