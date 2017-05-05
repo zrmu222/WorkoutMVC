@@ -27,7 +27,7 @@ namespace WorkoutMVC.Controllers
                 }
 
             
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("Index", "Workout");
         }
 
 

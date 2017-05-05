@@ -221,6 +221,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business\UserManager.cs" />
+    <Compile Include="Models\Business\WorkoutManager.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Service\CreateUser\CreateUserImpl.cs" />
@@ -228,6 +229,7 @@
     <Compile Include="Models\Service\Factory.cs" />
     <Compile Include="Models\Server\ServiceManager.cs" />
     <Compile Include="Models\Service\GetUser\GetUserImpl.cs" />
+    <Compile Include="Models\Service\GetWorkouts\GetWorkoutImpl.cs" />
     <Compile Include="Models\Service\HttpClientClass.cs" />
     <Compile Include="Models\Service\IService.cs" />
     <Compile Include="Models\WCF\WCFClient.cs" />
@@ -290,7 +292,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Workout.cshtml" />
-    <Content Include="Views\Workout\Workout.cshtml" />
+    <Content Include="Views\Workout\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <None Include="Service References\ServiceReference1\item.xsd">
       <SubType>Designer</SubType>

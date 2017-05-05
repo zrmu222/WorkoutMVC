@@ -9,17 +9,22 @@
         margin: 40px 50px 100px 420px;
     }
 
-    .login {
-        float: left;
-        margin: 20px 20px 20px 330px;
+    #userNameLable {
+        margin: 30px 10px 20px 320px;
     }
 
-    .inputBox {
-        float: left;
-        margin: 20px 20px 20px 0px;
-        width: 200px;
-        height: 30px;
+    #userNameBox{
+        margin: 30px 10px 20px 0px;
     }
+
+    #passwordLabel {
+        margin: 30px 10px 20px 320px;
+    }
+
+    #passwordBox {
+        margin: 30px 10px 20px 0px;
+    }
+
 
     #loginButton {
         margin: 40px 20px 100px 450px;
@@ -32,10 +37,10 @@
     <h1>Login</h1>
 
     <form action="Login/getUser" method="post">
-        <label class="login">UserName:</label>
-        <input class="inputBox" type="text" name="userName" placeholder="UserName" required />
-        <label class="login">Password:</label>
-        <input class="inputBox" type="password" name="password" placeholder="Password" required />
+        <label id="userNameLable">UserName:</label>
+        <input id="userNameBox" type="text" name="userName" placeholder="UserName" required />
+        <label id="passwordLabel" >Password:</label>
+        <input id="passwordBox"  type="password" name="password" placeholder="Password" required />
         <input id="loginButton" type="submit" value="Sign In"/>
     </form>
 

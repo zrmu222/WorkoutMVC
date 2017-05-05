@@ -1,7 +1,8 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Workout";
 }
+
+
 
 
 
@@ -55,8 +56,9 @@
     .lastRepBox {
         float: left;
         width: 70px;
-        height: 20px;
+        height: 30px;
         margin-left: 20px;
+        margin-top: 15px;
     }
 
     #completeDayBox {
@@ -66,36 +68,36 @@
 </style>
 
 <div class="jumbotron">
-    <h4 id="userName">FirstName LastName</h4>
+    <h4 id="userName">@ViewBag.firstName @ViewBag.lastName</h4>
     <h1>Workout</h1>
     <div id="workoutNumber">
-        <h3 id="weekNumber">Week Number: 1</h3>
-        <h3 id="dayNumber">Day Number: 1</h3>
+        <h3 id="weekNumber">Week Number: @ViewBag.weekNumber</h3>
+        <h3 id="dayNumber">Day Number: @ViewBag.dayNumber</h3>
      </div>
 
     <div class="workoutBox">
-        <h3 class="workoutName">Workout Name</h3>
-        <h4 class="workoutInfo">Weight: 100lb</h4>
-        <h4 class="workoutInfo">Sets: 3</h4>
-        <h4 class="workoutInfo">Reps: 5</h4>
+        <h3 class="workoutName">@ViewBag.name1</h3>
+        <h4 class="workoutInfo">Weight: @ViewBag.weight1 lb</h4>
+        <h4 class="workoutInfo">Sets: @ViewBag.sets1</h4>
+        <h4 class="workoutInfo">Reps: @ViewBag.reps1</h4>
         <h4 class="workoutInfo">Last Set Reps:</h4>
         <input class ="lastRepBox" type="number"/>
     </div>
 
     <div class="workoutBox">
-        <h3 class="workoutName">Workout Name</h3>
-        <h4 class="workoutInfo">Weight: 100lb</h4>
-        <h4 class="workoutInfo">Sets: 3</h4>
-        <h4 class="workoutInfo">Reps: 5</h4>
+        <h3 class="workoutName">@ViewBag.name2</h3>
+        <h4 class="workoutInfo">Weight: @ViewBag.weight2 lb</h4>
+        <h4 class="workoutInfo">Sets: @ViewBag.sets2</h4>
+        <h4 class="workoutInfo">Reps: @ViewBag.reps2</h4>
         <h4 class="workoutInfo">Last Set Reps:</h4>
         <input class="lastRepBox" type="number" />
     </div>
 
     <div class="workoutBox">
-        <h3 class="workoutName">Workout Name</h3>
-        <h4 class="workoutInfo">Weight: 100lb</h4>
-        <h4 class="workoutInfo">Sets: 3</h4>
-        <h4 class="workoutInfo">Reps: 5</h4>
+        <h3 class="workoutName">@ViewBag.name3</h3>
+        <h4 class="workoutInfo">Weight: @ViewBag.weight3 lb</h4>
+        <h4 class="workoutInfo">Sets: @ViewBag.sets3</h4>
+        <h4 class="workoutInfo">Reps: @ViewBag.reps3</h4>
         <h4 class="workoutInfo">Last Set Reps:</h4>
         <input class="lastRepBox" type="number" />
     </div>
